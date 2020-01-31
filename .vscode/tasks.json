@@ -5,20 +5,18 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "gcc-7 build active file",
-            "command": "/usr/bin/gcc-7",
+            "label": "gcc build",
+            "command": "/usr/bin/gcc",
             "args": [
-                "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "'pkg-config minigui mgncs mgeff mgplus mgutils harfbuzz-subset chipmunk mgncs4touch --cflags --libs'"
             ],
-            "options": {
-                "cwd": "/usr/bin"
-            },
+            "options": {},
             "problemMatcher": [
                 "$gcc"
             ]
-        }
+        }        
     ]
 }

@@ -37,7 +37,7 @@ dnl check for installation of MiniGUI
 dnl ========================================================================
 PKG_CHECK_MODULES([MINIGUI], [minigui >= 3.2.0])
 
-LIBS="$LIBS $MINIGUI_LIBS"
+LIBS="$LIBS -lcrypt -lmgncs4touch -lmgncs -lmgeff -lmgplus -lmgutils $MINIGUI_LIBS"
 
 dnl ========================================================================
 dnl Write Output

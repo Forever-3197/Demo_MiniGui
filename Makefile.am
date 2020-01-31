@@ -1,2 +1,0 @@
-noinst_PROGRAMS=helloworld
-helloworld_SOURCES=helloworld.c
