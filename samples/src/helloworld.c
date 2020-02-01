@@ -30,7 +30,7 @@ static BOOL mymain_onClose (mWidget* _this, int message)
     return TRUE;
 }
 
-static NCS_EVENT_HANDLER mymain_handlers [] = {
+static NCS_EVENT_HANDLER mymain_handlers [] = {//进程处理主函数
     {MSG_PAINT, mymain_onPaint},
     {MSG_CLOSE, mymain_onClose},
     {0, NULL}
@@ -39,10 +39,11 @@ static NCS_EVENT_HANDLER mymain_handlers [] = {
 // START_OF_MINIGUIMAIN
 int MiniGUIMain (int argc, const char* argv[])
 {
-    ncsInitialize ();
+    ncsInitialize ();//初始化
 
     mMainWnd* mymain = (mMainWnd*) ncsCreateMainWindow (
-        NCSCTRL_MAINWND, "Hello, world!",
+        NCSCTRL_MAINWND, 
+        "Hello, world!",
         WS_CAPTION | WS_BORDER | WS_VISIBLE,
         WS_EX_NONE,
         1,
@@ -51,7 +52,7 @@ int MiniGUIMain (int argc, const char* argv[])
         0, 0,
         NULL,
         NULL,
-        mymain_handlers,
+        mymain_handlers,//窗口控制权交由mymain_handlers函数
         0);
 
     _c(mymain)->doModal (mymain, TRUE);
